@@ -1,54 +1,90 @@
-<main class="page">
-  <section class="page-hero">
-    <p class="eyebrow">Diary</p>
-    <h1 class="page-title">What I’m studying, practising and trying to understand better.</h1>
-    <p class="lede">This is where I keep track of the real day-to-day side of learning cybersecurity — TryHackMe rooms, triage notes, Security+ revision, and the things I want to get better at over time.</p>
-    <div class="filter-line">
-      <span class="pill">TryHackMe</span>
-      <span class="pill">Triage practice</span>
-      <span class="pill">Security+</span>
-      <span class="pill">Interview prep</span>
-    </div>
-  </section>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diary | itsraisha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">its<span>raisha</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="diary.html" aria-current="page">Diary</a>
+          <a href="labs.html">Labs</a>
+        </div>
+      </nav>
+    </header>
 
-  <section class="section grid">
-    <a class="post" href="diary-soc-study-rhythm.html">
-      <div class="date-box"><strong>05</strong>Jun 2026</div>
-      <div>
-        <p class="meta">Latest entry</p>
-        <h3>Balancing TryHackMe, triage practice and Security+</h3>
-        <p>Lately I’ve been trying to keep my studying realistic by mixing hands-on practice, alert triage thinking, and a few Security+ chapters at a time.</p>
-        <div class="tag-row">
-          <span class="tag">TryHackMe</span>
-          <span class="tag sage">Study log</span>
+    <main class="page">
+      <section class="page-hero">
+        <p class="eyebrow">Diary</p>
+        <h1 class="page-title">What I’m studying, practising and trying to understand better.</h1>
+        <p class="lede">This is where I keep track of the real day-to-day side of learning cybersecurity — TryHackMe rooms, triage notes, Security+ revision, and the things I want to get better at over time.</p>
+        <div class="filter-line">
+          <span class="pill">TryHackMe</span>
+          <span class="pill">Triage practice</span>
+          <span class="pill">Security+</span>
+          <span class="pill">Interview prep</span>
+        </div>
+      </section>
+
+      <section class="section grid">
+        <a class="post" href="diary-soc-study-rhythm.html">
+          <div class="date-box"><strong>05</strong>Jun 2026</div>
+          <div>
+            <p class="meta">Latest entry</p>
+            <h3>Balancing TryHackMe, triage practice and Security+</h3>
+            <p>Lately I’ve been trying to keep my studying realistic by mixing hands-on practice, alert triage thinking, and a few Security+ chapters at a time.</p>
+            <div class="tag-row">
+              <span class="tag">TryHackMe</span>
+              <span class="tag sage">Study log</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="post" href="diary-triage-notes.html">
+          <div class="date-box"><strong>Next</strong>Draft</div>
+          <div>
+            <p class="meta">Planned</p>
+            <h3>Trying to get faster at triaging alerts properly</h3>
+            <p>A note on learning how to slow down, read an alert properly, and work through what I would actually check first as a junior analyst.</p>
+            <div class="tag-row">
+              <span class="tag">Triage</span>
+              <span class="tag">L1 SOC</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="post" href="diary-security-plus-revision.html">
+          <div class="date-box"><strong>Next</strong>Draft</div>
+          <div>
+            <p class="meta">Planned</p>
+            <h3>Security+ chapters I want to actually remember, not just read</h3>
+            <p>A revision note on keeping the basics clear and linking them back to real examples instead of treating them like theory only.</p>
+            <div class="tag-row">
+              <span class="tag lavender">Security+</span>
+              <span class="tag">Revision</span>
+            </div>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© 2026 Raisha Talukder.</p>
+        <div class="footer-links">
+          <a href="mailto:raishatalukder@gmail.com">Email</a>
+          <a href="https://ie.linkedin.com/in/raisha-talukder-483017219" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
-    </a>
-
-    <a class="post" href="diary-triage-notes.html">
-      <div class="date-box"><strong>Next</strong>Draft</div>
-      <div>
-        <p class="meta">Planned</p>
-        <h3>Trying to get faster at triaging alerts properly</h3>
-        <p>A note on learning how to slow down, read an alert properly, and work through what I would actually check first as a junior analyst.</p>
-        <div class="tag-row">
-          <span class="tag">Triage</span>
-          <span class="tag">L1 SOC</span>
-        </div>
-      </div>
-    </a>
-
-    <a class="post" href="diary-security-plus-revision.html">
-      <div class="date-box"><strong>Next</strong>Draft</div>
-      <div>
-        <p class="meta">Planned</p>
-        <h3>Security+ chapters I want to actually remember, not just read</h3>
-        <p>A revision note on keeping the basics clear and linking them back to real examples instead of treating them like theory only.</p>
-        <div class="tag-row">
-          <span class="tag lavender">Security+</span>
-          <span class="tag">Revision</span>
-        </div>
-      </div>
-    </a>
-  </section>
-</main>
+    </footer>
+  </body>
+</html>
