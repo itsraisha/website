@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Building a Study Rhythm | itsraisha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">its<span>raisha</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="about.html">About</a><a href="diary.html" aria-current="page">Diary</a><a href="labs.html">Projects</a><a href="questions.html">Questions</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page split">
+      <article class="article">
+        <p class="eyebrow">Diary · 05 Jun 2026</p>
+        <h1 class="page-title">Building a study rhythm around detection, not just tools.</h1>
+        <p class="lede">I want my study diary to show the process behind the polished labs: the repetition, the small mistakes, and the moments where a tool starts making sense.</p>
+
+        <h2>This week’s focus</h2>
+        <p>I’m trying to build my learning around detection questions instead of only around software names. A tool is useful, but the analyst habit is the part I want to strengthen: what happened, where is the evidence, what else would confirm it, and what would I do next?</p>
+        <p>For my SOC practice, that means taking one attack stage at a time. Reconnaissance should show up differently from brute force. Successful access should change the severity of what came before it. Post-compromise file activity should not sit alone; it should connect back to authentication and network events.</p>
+
+        <h2>What I’m keeping</h2>
+        <ul>
+          <li>One concept per week, written in simple language.</li>
+          <li>One lab screenshot or dashboard moment to explain.</li>
+          <li>One question I would expect in an interview.</li>
+          <li>One improvement to carry into the next rebuild.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Note to future me:</strong> do not hide the messy middle. The useful part is often where the logs do not show up, the rule is too broad, or the alert is technically correct but not analyst-friendly yet.
+        </div>
+
+        <h2>Next</h2>
+        <p>I want to revisit my Wazuh, Suricata and Auditd lab with narrower audit scope and cleaner tuning notes. The goal is to make the alert timeline easier to explain and easier to defend in an interview.</p>
+      </article>
+
+      <aside class="detail-panel">
+        <dl class="detail-list">
+          <div><dt>Theme</dt><dd>SOC study routine</dd></div>
+          <div><dt>Tools Mentioned</dt><dd>Wazuh, Suricata, Auditd</dd></div>
+          <div><dt>Next Entry</dt><dd>Rebuilding the lab with cleaner rule tuning</dd></div>
+        </dl>
+        <div class="actions"><a class="button" href="diary.html">Back to diary</a></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner"><p>© 2026 Raisha Talukder.</p><div class="footer-links"><a href="mailto:raishatalukder@gmail.com">Email</a><a href="https://linkedin.com/in/raishatalukder">LinkedIn</a></div></div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questions | itsraisha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">its<span>raisha</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="about.html">About</a><a href="diary.html">Diary</a><a href="labs.html">Projects</a><a href="questions.html" aria-current="page">Questions</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="page-hero">
+        <p class="eyebrow">Questions</p>
+        <h1 class="page-title">Interview-style cybersecurity answers, written like a study vlog.</h1>
+        <p class="lede">A growing Q&A section for questions I want to be able to answer clearly in SOC, blue-team and junior security interviews.</p>
+      </section>
+
+      <section class="section grid two">
+        <article class="qa-card">
+          <p class="meta">SOC fundamentals</p>
+          <h3>How would you investigate repeated failed SSH logins followed by one successful login?</h3>
+          <p>I would treat the successful login differently because it changes the story from attempted access to possible compromise. I’d check the source IP, timing, username, number of failures, authentication method and whether the success came after a brute force pattern. Then I’d pivot to host activity: new files, permission changes, unusual commands, persistence attempts and deletion activity.</p>
+        </article>
+        <article class="qa-card">
+          <p class="meta">Detection</p>
+          <h3>Why is multi-source correlation stronger than one alert by itself?</h3>
+          <p>A Suricata alert can show scanning, but not what happened after login. Authentication logs can show access attempts, but not what the user did. Auditd can show file activity, but not how the attacker arrived. Correlating all three gives a fuller timeline and reduces guesswork.</p>
+        </article>
+        <article class="qa-card">
+          <p class="meta">Threat analysis</p>
+          <h3>What did the honeypot lab teach you about attribution?</h3>
+          <p>Source country is not the same as attacker identity. A lot of malicious traffic can come from cloud infrastructure, VPNs or compromised systems. I would describe geographic patterns cautiously and focus more on behaviour, ports, reputation, payloads and repeatable indicators.</p>
+        </article>
+        <article class="qa-card">
+          <p class="meta">Application security</p>
+          <h3>What is IDOR and how did you fix it in the hospital app?</h3>
+          <p>IDOR happens when the application trusts an object ID from the user without checking ownership. In the appointment cancellation flow, changing the ID in the URL could affect another patient’s appointment. The fix was to enforce server-side ownership checks using the logged-in session before allowing the action.</p>
+        </article>
+        <article class="qa-card">
+          <p class="meta">Security operations</p>
+          <h3>What makes an alert noisy?</h3>
+          <p>An alert becomes noisy when it fires too broadly, lacks context, or catches normal system behaviour without enough filtering. In my Auditd work, broad deletion rules also captured Wazuh’s own process activity. The lesson was to tune scope carefully instead of assuming every technically correct alert is useful.</p>
+        </article>
+        <article class="qa-card">
+          <p class="meta">Malware behaviour</p>
+          <h3>Why does WannaCry still matter if the original outbreak was years ago?</h3>
+          <p>Because older vulnerabilities continue to matter when systems remain unpatched or exposed. My honeypot still captured WannaCry-like samples targeting SMB, which shows attackers keep scanning for old weaknesses at internet scale. Legacy risk does not disappear just because the headline moved on.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner"><p>© 2026 Raisha Talukder.</p><div class="footer-links"><a href="mailto:raishatalukder@gmail.com">Email</a><a href="https://linkedin.com/in/raishatalukder">LinkedIn</a></div></div>
+    </footer>
+  </body>
+</html>

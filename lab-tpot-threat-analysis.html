@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>T-Pot Threat Analysis | itsraisha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">its<span>raisha</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="about.html">About</a><a href="diary.html">Diary</a><a href="labs.html" aria-current="page">Projects</a><a href="questions.html">Questions</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page split">
+      <article class="article">
+        <p class="eyebrow">Featured lab</p>
+        <h1 class="page-title">Honeypot / T-Pot threat analysis.</h1>
+        <p class="lede">A multi-region honeypot deployment used to observe live internet attacks safely, analyse attacker behaviour and turn raw attack volume into readable threat intelligence.</p>
+
+        <div class="metric-row">
+          <div class="metric"><strong>3M+</strong><span>events</span></div>
+          <div class="metric"><strong>835k</strong><span>Cowrie attacks</span></div>
+          <div class="metric"><strong>755k</strong><span>Ciscoasa attacks</span></div>
+          <div class="metric"><strong>240k</strong><span>Dionaea attacks</span></div>
+        </div>
+
+        <h2>Overview</h2>
+        <p>I deployed T-Pot as a controlled honeynet so exposed services could attract real attacker traffic without risking a production system. The setup used one central hive in London and three sensors in London, Singapore and San Francisco, giving a wider view of global scanning behaviour.</p>
+        <p>The honeypots stayed online for more than a month. During that period, the environment collected over 3 million attack events and showed how quickly internet-facing services are discovered once they are reachable.</p>
+
+        <h2>What I Tested</h2>
+        <ul>
+          <li>How exposed SSH-like services attract brute force attempts through Cowrie.</li>
+          <li>How network appliance and VoIP-facing services are scanned through Ciscoasa-style telemetry.</li>
+          <li>How multi-port traps reveal broad service probing across VNC, RouterOS and admin-service ports.</li>
+          <li>How Dionaea captures malware delivery attempts targeting SMB exposure.</li>
+        </ul>
+
+        <h2>Key Findings</h2>
+        <p>Cowrie received the highest event volume, with more than 835,000 SSH attempts. The most common usernames reflected default admin and service accounts such as root, admin, postgres, docker, ubuntu and mysql. Common passwords included simple defaults such as 123456, password, admin123 and qwerty.</p>
+        <p>The traffic was not flat. Large spikes across multiple honeypots suggested automated scanning and botnet-style waves rather than one person manually interacting with a server. One day passed 160,000 total events, and unique source IP growth during peak scanning reached thousands of addresses.</p>
+        <p>Dionaea produced the most important malware finding. Captured binaries were checked by SHA-256 on VirusTotal and were identified as WannaCry strains by a high number of vendors. The result was a reminder that older SMB exploitation is not just historical; it still appears in live internet scanning.</p>
+
+        <div class="callout">
+          <strong>Portfolio takeaway:</strong> this project shows evidence handling, threat pattern analysis, dashboard investigation and cautious interpretation. Country attribution was treated carefully because cloud hosting, VPNs and compromised infrastructure can distort the apparent source.
+        </div>
+
+        <h2>What I Learned</h2>
+        <p>The project made exposed service risk feel much more concrete. SSH brute force, VoIP scanning and SMB malware delivery were not abstract topics; they appeared as repeated patterns in my own dashboards. I also learned that collection reliability matters: Logstash interruptions created gaps, so operational monitoring of the lab itself became part of the work.</p>
+
+        <h2>What I’d Improve Next</h2>
+        <ol>
+          <li>Rebuild the deployment with clearer uptime checks for sensors and log forwarding.</li>
+          <li>Add a short public dashboard export with sanitised charts and no sensitive infrastructure details.</li>
+          <li>Write a deeper malware note around the WannaCry samples, indicators and why SMB hardening still matters.</li>
+          <li>Compare regions using a more careful method so the analysis separates infrastructure location from likely attacker origin.</li>
+        </ol>
+      </article>
+
+      <aside class="detail-panel">
+        <dl class="detail-list">
+          <div><dt>Role</dt><dd>Deployment, monitoring, analysis and report writing</dd></div>
+          <div><dt>Stack</dt><dd>T-Pot, Kibana, Elastic Stack, Cowrie, Ciscoasa, Honeytrap, Dionaea, DigitalOcean</dd></div>
+          <div><dt>Signals</dt><dd>Brute force, service scanning, SIP/VoIP probing, SMB malware delivery, IP reputation</dd></div>
+          <div><dt>Status</dt><dd>Portfolio v1, ready for a future rebuilt lab with cleaner diagrams and screenshots</dd></div>
+        </dl>
+        <div class="actions"><a class="button" href="labs.html">Back to labs</a></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner"><p>© 2026 Raisha Talukder.</p><div class="footer-links"><a href="mailto:raishatalukder@gmail.com">Email</a><a href="https://linkedin.com/in/raishatalukder">LinkedIn</a></div></div>
+    </footer>
+  </body>
+</html>
