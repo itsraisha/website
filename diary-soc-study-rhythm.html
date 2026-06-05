@@ -26,14 +26,14 @@
       <article class="article">
         <p class="eyebrow">Diary · 05 Jun 2026</p>
         <h1 class="page-title">Thinking more like an L1 analyst, not just doing labs.</h1>
-        <p class="lede">Over the last few days I’ve been focusing more on blue-team thinking — understanding how attacks move through an environment, how those stages appear in logs, and how a SOC analyst would actually triage and respond instead of just naming the tools involved.</p>
+        <p class="lede">Over the last few days I’ve been focusing more on blue-team thinking, understanding how attacks move through an environment, how those stages appear in logs, and how a SOC analyst would actually triage and respond instead of just naming the tools involved.</p>
 
         <h2>What I’ve been focusing on</h2>
-        <p>I spent time going through the cyber attack lifecycle and the Cyber Kill Chain, but I’ve been trying to make it practical rather than just memorising stage names. I’ve been connecting each part — reconnaissance, delivery, exploitation, command and control, and actions on objectives — to what that would actually look like from a defender’s point of view on a host, in SIEM, or across a network.</p>
+        <p>I spent time going through the cyber attack lifecycle and the Cyber Kill Chain, but I’ve been trying to make it practical rather than just memorising stage names. I’ve been connecting each part - reconnaissance, delivery, exploitation, command and control, and actions on objectives — to what that would actually look like from a defender’s point of view on a host, in SIEM, or across a network.</p>
         <p>A big part of that has been recon and enumeration. I’ve been trying to get more comfortable with the difference between broad discovery and the more detailed follow-on steps, especially around things like IP ranges, live hosts, exposed services, and how early attacker activity might show up from the blue-team side.</p>
 
         <h2>Triage practice</h2>
-        <p>Alongside that, I’ve been practising SOC L1-style triage and trying to make my thought process clearer. I’ve been using the Five W’s — who, what, when, where, why/how — to break down alerts, especially unusual authentication activity, so I do not jump straight to the wrong conclusion.</p>
+        <p>Alongside that, I’ve been practising SOC L1-style triage and trying to make my thought process clearer. I’ve been using the Five W’s so who, what, when, where, why/how - to break down alerts, especially unusual authentication activity, so I do not jump straight to the wrong conclusion.</p>
         <p>I’ve also been building a more repeatable triage flow for myself: clarify the alert, check how important the user or host is, form a careful hypothesis, look at the surrounding logs or EDR/SIEM activity, and then decide whether the alert should be closed, watched, contained, or escalated. TryHackMe-style scenarios have been useful for this because they force me to think through what I would actually do next. [cite:2][cite:158][cite:246]</p>
 
         <h2>What’s starting to click</h2>
@@ -41,18 +41,18 @@
           <li>Attack stages make more sense when I link them to real evidence instead of treating them like theory.</li>
           <li>Reconnaissance and enumeration feel easier to separate when I think about what the attacker is trying to learn at each step.</li>
           <li>Triage is less about guessing quickly and more about building a clean, repeatable way to assess alerts.</li>
-          <li>Containment is not just “block the IP” — it can mean host isolation, account actions, or service-level response depending on the situation.</li>
+          <li>Containment is not just “block the IP” - it can mean host isolation, account actions, or service-level response depending on the situation.</li>
         </ul>
 
         <div class="callout">
-          <strong>Note to future me:</strong> keep slowing down and reasoning through the alert properly. The goal is not to sound dramatic — it is to be clear, factual, and confident about what happened, what matters, and what should happen next.
+          <strong>Note to future me:</strong> keep slowing down and reasoning through the alert properly. The goal is not to sound dramatic. It is to be clear, factual, and confident about what happened, what matters, and what should happen next.
         </div>
 
         <h2>Keeping it real</h2>
         <p>I’ve also been mixing in real incidents from podcasts, breach write-ups, and cyber news so this does not stay too theoretical. Mapping those real cases back to the attack lifecycle has helped me notice how often the same weak points show up again — phishing, exposed services, privilege escalation, lateral movement, and poor containment.</p>
 
         <h2>Next</h2>
-        <p>Next I want to keep practising shorter incident summaries, get better at reading alerts and process chains more naturally, and keep linking what I learn in TryHackMe and Security+ back to the kind of thinking I’d need in a junior SOC role. [cite:2][cite:249]</p>
+        <p>Next I want to keep practising shorter incident summaries, get better at reading alerts and process chains more naturally, and keep linking what I learn in TryHackMe and Security+ back to the kind of thinking I’d need in a junior SOC role.</p>
       </article>
 
       <aside class="detail-panel">
