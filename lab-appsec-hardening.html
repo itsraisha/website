@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Application Security Hardening | itsraisha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">its<span>raisha</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="diary.html">Diary</a>
+          <a href="labs.html" aria-current="page">Labs</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page split">
+      <article class="article">
+        <p class="eyebrow">Lab case study</p>
+        <h1 class="page-title">Application security hardening case study.</h1>
+        <p class="lede">A secure software development project focused on identifying, exploiting, fixing and retesting weaknesses in an open-source hospital management system.</p>
+
+        <h2>Overview</h2>
+        <p>This project used a hospital management system as the baseline application and applied a structured hardening process across requirements, design, implementation and testing. The main goal was to reduce exploitable weaknesses without changing the core features of the application.</p>
+        <p>The system handled sensitive flows involving patients, doctors and admins, so the security work focused on authentication, authorization, input validation, session protection and configuration security.</p>
+
+        <h2>What I worked on</h2>
+        <ul>
+          <li>Defining security requirements and mapping them to OWASP Top 10 and OWASP ASVS.</li>
+          <li>Analysing weaknesses in the baseline application and documenting exploitation paths. </li>
+          <li>Implementing security fixes and verifying that the original behaviour was no longer exploitable.</li>
+          <li>Supporting testing and evidence collection around the before-and-after state of the application. </li>
+        </ul>
+
+        <h2>Security issues addressed</h2>
+        <p>The hardened version addressed stored XSS, insecure direct object reference in appointment cancellation, plaintext password storage, broken access control on admin pages, missing rate limiting on login forms and directory browsing exposure. Each issue was tested in the vulnerable version first and then retested after the fix.</p>
+        <p>The fixes included output encoding, ownership checks, password hashing and verification, stronger session validation, brute-force protection and Apache configuration changes to restrict directory listing and sensitive file access. </p>
+
+        <h2>Testing approach</h2>
+        <p>OWASP ZAP was used as the main security testing tool for scanning, fuzzing and checking application behaviour before and after hardening. Test cases focused on whether malicious inputs were safely handled and whether unauthorized users could still reach protected functionality.</p>
+        <p>This made the project feel less like a checklist and more like a real secure development cycle: identify the weakness, understand why it matters, implement a fix and prove that the original exploit path has been blocked. </p>
+
+        <div class="callout">
+          <strong>Portfolio takeaway:</strong> this project shows practical web security work from both sides — understanding how flaws are exploited and then translating that into safer code, access control and configuration choices. 
+        </div>
+
+        <h2>What I learned</h2>
+        <p>The biggest lesson was that many high-impact web flaws come from trusting user input, trusting identifiers passed in URLs, or assuming that hiding a page is the same as protecting it. It also showed how much difference small code and configuration changes can make when they are tied to clear requirements and tested properly.</p>
+
+        <h2>What I’d improve next</h2>
+        <ol>
+          <li>Add cleaner screenshots of the before-and-after exploit paths. </li>
+          <li>Separate the portfolio write-up more clearly by personal contribution and team-wide contribution.</li>
+          <li>Expand the testing section with a more visual summary of which risks were fixed and how they were verified.</li>
+          <li>Include a short code-focused appendix showing a few of the strongest hardening changes.</li>
+        </ol>
+      </article>
+
+      <aside class="detail-panel">
+        <dl class="detail-list">
+          <div><dt>Role</dt><dd>Security requirements, vulnerability analysis, hardening work and documentation</dd></div>
+          <div><dt>Stack</dt><dd>PHP, MySQL, XAMPP, OWASP ZAP, Apache</dd></div>
+          <div><dt>Focus</dt><dd>XSS, IDOR, password storage, access control, rate limiting, misconfiguration</dd></div>
+          <div><dt>Status</dt><dd>Portfolio v1, ready for cleaner screenshots and more code excerpts</dd></div>
+        </dl>
+        <div class="actions"><a class="button" href="labs.html">Back to labs</a></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© 2026 Raisha Talukder.</p>
+        <div class="footer-links">
+          <a href="mailto:raishatalukder@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/raishatalukder" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

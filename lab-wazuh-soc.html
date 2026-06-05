@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open-Source SOC with Wazuh | itsraisha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">its<span>raisha</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="diary.html">Diary</a>
+          <a href="labs.html" aria-current="page">Labs</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page split">
+      <article class="article">
+        <p class="eyebrow">Lab case study</p>
+        <h1 class="page-title">Open-source SOC with Wazuh, Suricata and Auditd.</h1>
+        <p class="lede">A small AWS-based SOC designed to show how different data sources can be correlated into one readable attack timeline, from reconnaissance through brute force to post-exploitation activity. </p>
+
+        <h2>Overview</h2>
+        <p>I built this lab using a hive-sensor architecture on AWS EC2. The hive acted as the central Wazuh manager and dashboard, while the sensor acted as the monitored endpoint generating Suricata, authentication and Auditd logs that were forwarded for analysis.</p>
+        <p>To simulate an external attacker, I used Kali Linux in VirtualBox and ran a simple attack chain: Nmap reconnaissance, Hydra SSH brute force, successful login and post-compromise file activity. The main goal was not just to detect events, but to investigate them from the point of view of a SOC analyst.</p>
+
+        <h2>What I tested</h2>
+        <ul>
+          <li>Network reconnaissance against the sensor using Nmap.</li>
+          <li>SSH brute force using Hydra to generate repeated authentication failures and one successful login.</li>
+          <li>Post-exploitation actions like file creation, permission changes and file deletion to mimic payload staging and cleanup.</li>
+          <li>Multi-source alert correlation across Suricata, SSH/PAM logs and Auditd.</li>
+        </ul>
+
+        <h2>How detection worked</h2>
+        <p>Suricata gave visibility into the early network stage, especially scanning and suspicious SSH-related traffic, while authentication logs showed repeated failures followed by successful access. Auditd then captured what happened after compromise, including commands linked to file creation, chmod changes and deletion events.</p>
+        <p>I also created custom Wazuh rules to make key Auditd events easier to investigate in the dashboard. Those rules focused on file creation, permission changes and deletion so the post-exploitation sequence became much clearer during timeline reconstruction.</p>
+
+        <h2>Key findings</h2>
+        <p>The most useful lesson was seeing how each log source answers a different question. Suricata could show that the host was being targeted, authentication logs showed that access attempts were happening, and Auditd showed what was done on the host after access was gained.</p>
+        <p>That made the timeline much more convincing than any single alert on its own. It also showed why SOC investigation depends on correlation, not just severity levels or one noisy event stream.</p>
+
+        <div class="callout">
+          <strong>Portfolio takeaway:</strong> this lab is less about “installing tools” and more about building an analyst workflow - detecting an attack chain, pivoting between data sources and explaining what happened clearly.
+        </div>
+
+        <h2>Challenges</h2>
+        <p>One challenge was getting Auditd and Wazuh to work cleanly together so events were correctly collected, parsed and shown in the dashboard. Another was alert noise: some file-deletion-style events came from Wazuh’s own processes, which showed me that not every alert is malicious and tuning matters just as much as detection.</p>
+
+        <h2>What I’d improve next</h2>
+        <ol>
+          <li>Tighten Auditd scope so alerts focus more on relevant user directories and less on background system noise.</li>
+          <li>Refine the custom rules to reduce repeated or overly broad matches.</li>
+          <li>Add cleaner screenshots and diagrams showing the attack flow and alert timeline.</li>
+          <li>Expand the lab with one more attacker technique so the investigation includes a wider range of post-compromise behaviour.</li>
+        </ol>
+      </article>
+
+      <aside class="detail-panel">
+        <dl class="detail-list">
+          <div><dt>Role</dt><dd>Architecture, deployment, attack simulation, alert analysis and reporting</dd></div>
+          <div><dt>Stack</dt><dd>AWS EC2, Wazuh, Suricata, Auditd, Kali Linux, VirtualBox</dd></div>
+          <div><dt>Signals</dt><dd>Nmap recon, SSH brute force, successful login, file creation, permission change, file deletion</dd></div>
+          <div><dt>Status</dt><dd>Portfolio v1, ready for tighter tuning and clearer screenshots</dd></div>
+        </dl>
+        <div class="actions"><a class="button" href="labs.html">Back to labs</a></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>© 2026 Raisha Talukder.</p>
+        <div class="footer-links">
+          <a href="mailto:raishatalukder@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/raishatalukder" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

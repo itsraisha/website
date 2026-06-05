@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projects | itsraisha</title>
+    <title>Labs | itsraisha</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -14,17 +14,25 @@
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="index.html">its<span>raisha</span></a>
         <div class="nav-links">
-          <a href="index.html">Home</a><a href="about.html">About</a><a href="diary.html">Diary</a><a href="labs.html" aria-current="page">Projects</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="diary.html">Diary</a>
+          <a href="labs.html" aria-current="page">Labs</a>
         </div>
       </nav>
     </header>
 
     <main class="page">
       <section class="page-hero">
-        <p class="eyebrow">Projects</p>
-        <h1 class="page-title">Cybersecurity projects and case studies.</h1>
-        <p class="lede">These projects started as structured lab work, but here they are reframed as portfolio evidence: scope, tools, method, findings, lessons and next improvements.</p>
-        <div class="filter-line"><span class="pill">Threat detection</span><span class="pill">SOC workflow</span><span class="pill">Application hardening</span><span class="pill">Malware behaviour</span></div>
+        <p class="eyebrow">Labs</p>
+        <h1 class="page-title">Cybersecurity labs, projects and case studies.</h1>
+        <p class="lede">These started as academic lab work, but here I’ve rewritten them as portfolio pieces with a clearer focus on scope, attack simulation, investigation, findings and what I’d improve next.</p>
+        <div class="filter-line">
+          <span class="pill">Threat detection</span>
+          <span class="pill">SOC workflow</span>
+          <span class="pill">Application security</span>
+          <span class="pill">Malware analysis</span>
+        </div>
       </section>
 
       <section class="section grid">
@@ -33,45 +41,65 @@
           <div>
             <p class="meta">T-Pot · Kibana · Elastic Stack</p>
             <h3>Honeypot / T-Pot threat analysis</h3>
-            <p>Deployed a multi-honeypot environment with a London hive and sensors across London, Singapore and San Francisco. Analysed more than 3 million attack events, including SSH brute force, SIP/VoIP scanning, service probing and WannaCry samples captured through Dionaea.</p>
-            <div class="tag-row"><span class="tag">3M+ events</span><span class="tag">Cowrie</span><span class="tag">Dionaea</span><span class="tag lavender">WannaCry</span></div>
+            <p>Deployed a multi-honeypot environment with a central hive and sensors across London, Singapore and San Francisco. Analysed more than 3 million events, including SSH brute force, service scanning, SIP/VoIP probing and malware captured through Dionaea. [file:182]</p>
+            <div class="tag-row">
+              <span class="tag">3M+ events</span>
+              <span class="tag">Cowrie</span>
+              <span class="tag">Dionaea</span>
+              <span class="tag lavender">WannaCry</span>
+            </div>
           </div>
         </a>
 
-        <article class="post" id="wazuh-soc">
+        <a class="post" href="lab-wazuh-soc.html">
           <div class="date-box"><strong>02</strong>Case study</div>
           <div>
             <p class="meta">Wazuh · Suricata · Auditd · AWS</p>
-            <h3>Open-source SOC / SIEM with Wazuh, Suricata and Auditd</h3>
-            <p>Built a small SOC using an AWS hive-sensor architecture. Simulated an external Kali attack chain with Nmap reconnaissance, Hydra SSH brute force and post-exploitation file activity. Correlated Suricata network alerts, SSH/PAM authentication logs and Auditd host telemetry in Wazuh.</p>
-            <div class="tag-row"><span class="tag">Custom rules</span><span class="tag">Attack timeline</span><span class="tag sage">False positive tuning</span></div>
+            <h3>Open-source SOC with Wazuh, Suricata and Auditd</h3>
+            <p>Built a small SOC using a hive-sensor setup on AWS EC2. Simulated Nmap reconnaissance, Hydra SSH brute force and post-exploitation file activity, then correlated Suricata alerts, authentication logs and Auditd telemetry inside Wazuh. [file:255]</p>
+            <div class="tag-row">
+              <span class="tag">Custom rules</span>
+              <span class="tag">Attack timeline</span>
+              <span class="tag sage">Alert correlation</span>
+            </div>
           </div>
-        </article>
+        </a>
 
-        <article class="post" id="appsec-hardening">
+        <a class="post" href="lab-appsec-hardening.html">
           <div class="date-box"><strong>03</strong>Case study</div>
           <div>
             <p class="meta">OWASP · PHP · MySQL · ZAP</p>
             <h3>Application security hardening case study</h3>
-            <p>Hardened an open-source hospital management application against stored XSS, IDOR, plaintext credential storage, broken access control, missing admin session validation, unlimited login attempts and directory browsing. Mapped security goals to OWASP Top 10 and ASVS, then retested the fixes.</p>
-            <div class="tag-row"><span class="tag">XSS</span><span class="tag">IDOR</span><span class="tag">Password hashing</span><span class="tag lavender">Rate limiting</span></div>
+            <p>Worked on securing an open-source hospital management system by fixing stored XSS, IDOR, plaintext password storage, broken access control, missing rate limiting and directory browsing exposure, then retested the fixes with security testing evidence. [file:253]</p>
+            <div class="tag-row">
+              <span class="tag">XSS</span>
+              <span class="tag">IDOR</span>
+              <span class="tag">Password hashing</span>
+              <span class="tag lavender">Rate limiting</span>
+            </div>
           </div>
-        </article>
+        </a>
       </section>
 
       <section class="soft-band">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Update-friendly</p>
-            <h2>Designed for rebuilds and version two write-ups.</h2>
+            <p class="eyebrow">Built to grow</p>
+            <h2>Each lab can expand into a fuller case study later.</h2>
           </div>
-          <p>Each project can later add screenshots, diagrams, GitHub links, detection rules, testing evidence and a “what changed in the redo” section without redesigning the site.</p>
+          <p>That means screenshots, diagrams, GitHub links, alert logic, testing evidence and “what I changed in version two” can all be added later without reworking the whole site.</p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-inner"><p>© 2026 Raisha Talukder.</p><div class="footer-links"><a href="mailto:raishatalukder@gmail.com">Email</a><a href="https://linkedin.com/in/raishatalukder">LinkedIn</a></div></div>
+      <div class="footer-inner">
+        <p>© 2026 Raisha Talukder.</p>
+        <div class="footer-links">
+          <a href="mailto:raishatalukder@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/raishatalukder" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
